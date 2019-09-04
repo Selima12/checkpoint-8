@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
+import Daniel from './Daniel.jpg';
+import Sarra from './Sarra.jpg';
+import Harold from './harold.jpg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+function Button(props) {
+  return <button onClick={props.onClick}>{props.btn}</button>}
+  export default class App extends React.Component{
+    constructor(props){
+      super(props);
+    this.state={
+      photo: Sarra,
+      Name : 'Sarra' ,
+      Texte : 'Hi my name is Sarra , i m 20 years old ',
+     
+    }
+  }
+
+  render(){
+    return (
+      <div>
+        <center>
+    <button onClick={()=>{
+      this.setState({Name:"Daniel",photo:Daniel,Texte:"Hi my name is Daniel , i m 25 years old"})
+    }}>Daniel</button>  
+
+    <button onClick={()=>{
+      this.setState({Name:"Harold",photo:Harold,Texte:"Hi my name is Harold , i m 40 years old"})
+    }}>Harold</button> 
+    <button onClick={()=>{
+      this.setState({Name:"Sarra",photo:Sarra,Texte:"Hi my name is Sarra , i m 20 years old"})
+    }}>Sarra</button> 
+
+    <h1> {this.state.Name}</h1>
+    <img style={{width:250,height:250}} src={this.state.photo}/>  
+    <h3> {this.state.Texte} </h3>
+    </center>
     </div>
-  );
+  
+);
+
+}
 }
 
-export default App;
+
